@@ -1,5 +1,3 @@
-
-
 //1
 /*Create a string array that contains your five favorite movies. */
 var moviesList = ["Kal Ho Na Ho", "Swades", "3 Idiots", "Yeh Jawaani Hain Deewani", "The Imitation Game"];
@@ -69,6 +67,8 @@ for (var movie of movies) {
 
 var movies = ["Kal Ho Na Ho", "Swades", "3 Idiots", "Yeh Jawaani Hain Deewani", "The Imitation Game", "The Avengers", "Iron Man"];
 
+movies.sort();
+
 for (var movie of movies) {
   window.console.log(movie);
 }
@@ -80,14 +80,21 @@ for (var movie of movies) {
 var movies = ["Kal Ho Na Ho", "Swades", "3 Idiots", "Yeh Jawaani Hain Deewani", "The Imitation Game", "The Avengers", "Iron Man"];
 var leastFavMovies = ["Thor", "Thor: The Dark World", "Thor: Love and Thunder"];
 
-window.console.log("Movies I like:");
-for (var movie in movies) {
-  console.log(movie);
+console.log("Movies I like:\n");
+var element;
+for (element in movies) {
+    if (movies.hasOwnProperty(element)) {
+        console.log(movies[element]);
+    }
 }
 
-window.console.log("\nMovies I regret watching:");
-for (var movie in leastFavMovies) {
-  console.log(movie);
+console.log("\n")
+console.log("Movies I regret watching:\n");
+var element;
+for (element in leastFavMovies) {
+    if (movies.hasOwnProperty(element)) {
+        console.log(leastFavMovies[element]);
+    }
 }
 
 
@@ -96,15 +103,22 @@ for (var movie in leastFavMovies) {
 var movies = ["Kal Ho Na Ho", "Swades", "3 Idiots", "Yeh Jawaani Hain Deewani", "The Imitation Game", "The Avengers", "Iron Man"];
 var leastFavMovies = ["Thor", "Thor: The Dark World", "Thor: Love and Thunder"];
 
-window.console.log("Movies I like:");
-for (var movie in movies) {
-  console.log(movie);
+console.log("Movies I like:\n");
+var element;
+for (element in movies) {
+    if (movies.hasOwnProperty(element)) {
+        console.log(movies[element]);
+    }
 }
 
-window.console.log("\nMovies I regret watching:");
-for (var movie in leastFavMovies) {
-  console.log(movie);
-
+console.log("\n")
+console.log("Movies I regret watching:\n");
+var element;
+for (element in leastFavMovies) {
+    if (movies.hasOwnProperty(element)) {
+        console.log(leastFavMovies[element]);
+    }
+}
 
 movies = movies.concat(leastFavMovies);
 movies.sort().reverse();
@@ -119,15 +133,22 @@ for (var movie of movies) {
 var movies = ["Kal Ho Na Ho", "Swades", "3 Idiots", "Yeh Jawaani Hain Deewani", "The Imitation Game", "The Avengers", "Iron Man"];
 var leastFavMovies = ["Thor", "Thor: The Dark World", "Thor: Love and Thunder"];
 
-window.console.log("Movies I like:");
-for (var movie in movies) {
-  console.log(movie);
+console.log("Movies I like:\n");
+var element;
+for (element in movies) {
+    if (movies.hasOwnProperty(element)) {
+        console.log(movies[element]);
+    }
 }
 
-window.console.log("\nMovies I regret watching:");
-for (var movie in leastFavMovies) {
-  console.log(movie);
-
+console.log("\n")
+console.log("Movies I regret watching:\n");
+var element;
+for (element in leastFavMovies) {
+    if (movies.hasOwnProperty(element)) {
+        console.log(leastFavMovies[element]);
+    }
+}
 
 movies = movies.concat(leastFavMovies);
 movies.sort().reverse();
@@ -146,14 +167,22 @@ console.log("The last movie in the concatenated array is: " + lastMovie);
 var movies = ["Kal Ho Na Ho", "Swades", "3 Idiots", "Yeh Jawaani Hain Deewani", "The Imitation Game", "The Avengers", "Iron Man"];
 var leastFavMovies = ["Thor", "Thor: The Dark World", "Thor: Love and Thunder"];
 
-window.console.log("Movies I like:");
-for (var movie in movies) {
-  window.console.log(movie);
+console.log("Movies I like:\n");
+var element;
+for (element in movies) {
+    if (movies.hasOwnProperty(element)) {
+        console.log(movies[element]);
+    }
 }
 
-window.console.log("\nMovies I regret watching:");
-for (var movie in leastFavMovies) {
-  console.log(movie);
+console.log("\n")
+console.log("Movies I regret watching:\n");
+var element;
+for (element in leastFavMovies) {
+    if (movies.hasOwnProperty(element)) {
+        console.log(leastFavMovies[element]);
+    }
+}
 
 
 movies = movies.concat(leastFavMovies);
@@ -175,22 +204,27 @@ movies = movies.concat(leastFavMovies);
 var indices = [];
 
 for (var i = 0; i < movies.length; i++) {
-    if (movies.includes(movies[i])) {
+    if (movies[i]==="Thor" || movies[i] === "Thor: The Dark World" || movies[i]==="Thor: Love and Thunder") {
         indices.push(i);
 
     }
 }
 
-for (var i = 0; i < indices.length; i+=1) {
-    movies[indices[i]] = "Mission Impossible "+(i+1);
+for (var i of indices.reverse()){
+  movies.splice(i,1);
 }
 
-window.console.log("Movies that I like: " + movies);
+movies.splice(7,0,"Golmaal","Golmaal Returns","Golmaal 3");
+
+console.log("Updated movie list:");
+for (let movie of movies) {
+  console.log(movie);
+}
 
 
 //13
 
-var movies = [["Dilwale Dulhania Le Jayenge", 1], ["Kuch Kuch Hota Hai", 2], ["Dil", 3], [" Kabhi Khushi Kabhie Gham", 4], ["Kal Ho Naa Ho", 5]];
+var movies = [["Dilwale Dulhania Le Jayenge", 1], ["Kuch Kuch Hota Hai", 2], ["Dil", 3], ["Kabhi Khushi Kabhie Gham", 4], ["Kal Ho Naa Ho", 5]];
 
 var movieNames = movies.filter(function(movie) {
   return typeof movie[0] === 'string';
@@ -223,7 +257,7 @@ function filteration(a) {
   });
 }
 
-window.console.log(filterValues([58, '', 'abcd', true, null, false, 0]));
+window.console.log(filteration([58, '', 'abcd', true, null, false, 0]));
 
 
 
@@ -234,7 +268,6 @@ function randomFunction(a) {
 
 var n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 console.log(randomFunction(n));
-
 
 //17
 
@@ -250,4 +283,4 @@ function largest(numbers) {
 
 var a = [1, 20, 3, 40, 5, 6, 70, 8, 99, 100];
 
-console.log("Largest number is "+largest(a)); 
+console.log(largest(a));
