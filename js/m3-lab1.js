@@ -31,7 +31,7 @@ movies[3] = "Yeh Jawaani Hain Deewani";
 movies[4] = "The Imitation Game";
 
 /* Add a new movie into the 3rd position within your array. */
-movies[2] = "Iron Man";
+movies.splice(2, 0, "Iron Man");
 
 /* Then, use the console to display the length of the array. You should now have 6 total movies stored in the array. */
 window.console.log(movies.length);
